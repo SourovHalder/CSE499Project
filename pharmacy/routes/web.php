@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('/admin')->namespace('Admin')->group(function(){
+//all the admin routes will be here
+Route::match(['get','post'],'/',[AdminController::class,'adminlogin']);
+Route::group(['middleware'=>['admin']],function(){
+    
+
+Route::get('/dashboard',[AdminController::class,'dashboard']);
+});
+});
