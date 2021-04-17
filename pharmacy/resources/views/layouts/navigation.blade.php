@@ -12,7 +12,23 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
         <li><a href="/">Nearby Pharmacy</a></li>
+        
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Medicines
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">daily neccessaries</a>
+          <a class="dropdown-item" href="#">Antibiotics</a>
+          <a class="dropdown-item" href="#">Painkillers</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li><a href="/">Let us order for you!</a></li>
       </ul>
+      
 
       <form class="navbar-form navbar-right" type="get" action="{{ url('/search')}}">
   <div class="input-group">

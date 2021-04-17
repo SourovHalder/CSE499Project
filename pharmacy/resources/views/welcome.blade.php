@@ -37,4 +37,6 @@
 	</div>
 </div>
 
+<h3>Latest Medicines<span class="badge badge-secondary">New</span></h3>
+
 @endsection
