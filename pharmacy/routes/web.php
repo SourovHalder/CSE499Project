@@ -18,16 +18,13 @@ Route::get('/', function (){
     return view('welcome');
 });
 
+Route::get('admin',[AdminController::class,'index']);
+Route::post('admin/auth',[AdminController::class,'auth']);
+
+Route::get('admin/dashboard',[AdminController::class,'dashboard']);
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+   
 
-Route::prefix('admin')->group(function(){
-//all the admin routes will be here
-Route::match(['get','post'],'/login',[AdminController::class,'adminLogin'])
-              ->name('admin_login');
-Route::match(['get','post'],'/',[AdminController::class,'adminlogin']);
-Route::group(['middleware'=>['admin']],function(){
-Route::get('/dashboard',[AdminController::class,'dashboard']);
-});
-});
+   
+ 

@@ -1,5 +1,7 @@
 @extends('layouts.admin_layout.admin_layout')
 @section('content')
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/app.css">
 
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
