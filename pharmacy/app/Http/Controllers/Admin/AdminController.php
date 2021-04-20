@@ -10,6 +10,12 @@ use Session;
 
 class AdminController extends Controller
 {
+    public function show(Request $request, $id)
+    {
+        $value = $request->session()->get('key');
+
+        //
+    }
     public function dashboard(){
         return view('admin.admin_dashboard');
     }
