@@ -21,6 +21,7 @@
   <script src="{{asset('/js/front.js')}}"></script>
   <script src="{{asset('/js/jquery.lightbox-0.5.js')}}"></script>
   
+  
   </head>
   <style>
 
