@@ -16,12 +16,13 @@ class Admin
      * @return mixed
      */
     public function handle(Request $request, Closure $next){
-      if($request->session()->has('ADMIN_LOGIN')){  
-  }
- else{ 
-  Session::flash('error_message','Invalid Email or Password');
-     return redirect('admin');
- }
+      // if(auth()->guest()){
+      //   return redirect('admin');
+      // }
+      // if(!auth()->user()->admin){
+      //   return view('admin/dashboard');
+      // }
+ 
    return $next($request);
 }
 }
@@ -31,3 +32,9 @@ class Admin
 
 // }
 //}
+// if($request->session()->has('ADMIN_LOGIN')){  
+// }
+// else{ 
+// Session::flash('error_message','Invalid Email or Password');
+//    return redirect('admin');
+// }

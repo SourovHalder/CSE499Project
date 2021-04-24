@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Front\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,12 @@ Route::get('/', function (){
 Route::get('admin',[AdminController::class,'index']);
 Route::post('admin/auth',[AdminController::class,'auth']);
 
-Route::get('admin/dashboard',[AdminController::class,'dashboard']);
+Route::get('admin/dashboard',[AdminController::class,'dashboard'])->middleware('admin');
 
+
+
+//UserCOntrollers routes
+Route::get('/autoorder',[UsersController::class,'autoorder']);
 
    
 
