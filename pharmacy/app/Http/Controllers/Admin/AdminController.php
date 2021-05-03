@@ -39,5 +39,12 @@ if(isset($result['0']->id)){
 
 }
 
+
+//will be removed later
+
+public function addedit(){
+    return view('admin.medicines.add_edit_medicine');
+}
+
  
 }
