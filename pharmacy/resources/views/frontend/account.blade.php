@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/app.css">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

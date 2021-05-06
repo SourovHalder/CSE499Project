@@ -29,26 +29,12 @@ Route::get('admin/dashboard',[AdminController::class,'dashboard'])->middleware('
     //Manufacturer
 Route::get('admin/manufacturers',[ManufacturerController::class,'manufacturers']);
 
-//medicine  
-Route::get('admin/medicines',[MedicinesController::class,'medicines']);
+//medicine
 Route::match(['get','post'],'admin/add-edit-medicine/{id?}',[MedicinesController::class,'addEditMedicine']);
-Route::match(['get','post'],'admin/delete-medicine/{id?}',[MedicinesController::class,'deleteMedicine']);
 
 //UserCOntrollers routes
 Route::get('/autoorder',[UsersController::class,'autoorder']);
-Route::get('/account',[UsersController::class,'account']);
 Route::get('/addedit',[AdminController::class,'addedit']);
-
-//Usercontrollers
-Route::get('/login-page',[UsersController::class,'loginPage']);
-Route::get('/registration-page',[UsersController::class,'registrationPage']);
-Route::post('/clogin',[UsersController::class,'loginUser']);
-Route::post('/cregister',[UsersController::class,'registerUser']);
-Route::get('/logout',[UsersController::class,'logout']);
-
-//user account
-Route::match(['GET', 'POST'],'/account',[UsersController::class,'account']);
-
 
    
 
