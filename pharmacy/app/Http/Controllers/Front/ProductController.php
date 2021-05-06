@@ -15,32 +15,11 @@ use Session;
 class ProductController extends Controller
 {
 
-    /**
-     * Product Details View
-     *
-     * Returns the view of product details
-     * @bodyParam productDetails array required All data of the medicine by id from table
-     * @urlParam id number required Id of the medicine
-     */
     public function detail($id){
         $productDetails= Medicine::find($id)->toArray();
         return view('frontend.medicine_detail')->with(compact('productDetails'));
     }
-    /**
-     * Products Added View
-     *
-     * Returns the view of product details
-     * @bodyParam request is requesting for data
-     * @bodyParam session_id is getting session_id
 
-     * @bodyParam create Cart object
-
-     * @bodyParam cart.session_id string required session_id of user
-     * @bodyParam cart.quantity integer required quantity of product
-     * @bodyParam cart.medicineId string required medicineId of medicine
-     * @bodyParam message string is a confirmation message
-     *
-     */
 
 
     public function addtocart(Request $request){

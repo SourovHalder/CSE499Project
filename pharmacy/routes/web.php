@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Front\UsersController;
 use App\Http\Controllers\Admin\ManufacturerController;
 use App\Http\Controllers\Admin\MedicinesController;
+use App\Http\Controllers\Front\ProductController;
 
 
 /*
@@ -49,6 +50,9 @@ Route::get('/logout',[UsersController::class,'logout']);
 //user account
 Route::match(['GET', 'POST'],'/account',[UsersController::class,'account']);
 
+//productcontroller 
+
+Route::post('/cart',[ProductController::class,'addtocart']);
 
    
 

@@ -26,20 +26,20 @@
     </div>
   </div>
 </form>
-      @csrf
-      <ul class="nav navbar-nav navbar-right">
-        @auth
-        <li><a href="{{url('/account')}}"><span class="glyphicon glyphicon-user"></span> Hello {{ Auth::user()->firstName }}</a></li>
-        @endauth
-        <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a>
-          <div class="dropdown-content" aria-label="submenu">
-            @auth
-            <a href="{{ url('/logout') }}"> {{ __('Logout') }}</a>
-            @endauth
-            @guest
-            <a href="{{ url('/registration-page') }}">Register</a>
-            <a href="{{ url('/login-page') }}">Login</a>
-            @endguest
+@csrf
+<ul class="nav navbar-nav navbar-right">
+  @auth
+  <li><a href="{{url('/account')}}"><span class="glyphicon glyphicon-user"></span> Hello {{ Auth::user()->firstName }}</a></li>
+  @endauth
+  <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a>
+    <div class="dropdown-content" aria-label="submenu">
+      @auth
+      <a href="{{ url('/logout') }}"> {{ __('Logout') }}</a>
+      @endauth
+      @guest
+      <a href="{{ url('/registration-page') }}">Register</a>
+      <a href="{{ url('/login-page') }}">Login</a>
+      @endguest
           </div>
         </li>
         <li><a href="#" onclick="return false";><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
