@@ -11,24 +11,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
-        <li><a href="/">Nearby Pharmacy</a></li>
-        
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Medicines
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">daily neccessaries</a>
-          <a class="dropdown-item" href="#">Antibiotics</a>
-          <a class="dropdown-item" href="#">Painkillers</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li><a href="/">Let us order for you!</a></li>
+        <li><a href="{{url('/map')}}">Nearby Pharmacy</a></li>
+        <li><a href="{{url('/autoorder')}}">Let us order for you</a></li>
       </ul>
-      
 
       <form class="navbar-form navbar-right" type="get" action="{{ url('/search')}}">
   <div class="input-group">
@@ -41,13 +26,20 @@
     </div>
   </div>
 </form>
-      @csrf
-      <ul class="nav navbar-nav navbar-right">
-       
-        <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a>
-          <div class="dropdown-content" aria-label="submenu">
-           
-      
+@csrf
+<ul class="nav navbar-nav navbar-right">
+  @auth
+  <li><a href="{{url('/account')}}"><span class="glyphicon glyphicon-user"></span> Hello {{ Auth::user()->firstName }}</a></li>
+  @endauth
+  <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a>
+    <div class="dropdown-content" aria-label="submenu">
+      @auth
+      <a href="{{ url('/logout') }}"> {{ __('Logout') }}</a>
+      @endauth
+      @guest
+      <a href="{{ url('/registration-page') }}">Register</a>
+      <a href="{{ url('/login-page') }}">Login</a>
+      @endguest
           </div>
         </li>
         <li><a href="#" onclick="return false";><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
