@@ -3,18 +3,19 @@
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/app.css">
 
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1> Form</h1>
+          <h1>{{$title}} Form</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            
+            <li class="breadcrumb-item active">{{$title}}</li>
           </ol>
         </div>
       </div>
@@ -25,7 +26,7 @@
   <section class="content">
     <div class="container-fluid">
       <!-- SELECT2 EXAMPLE -->
-      <form name="medicineForm" id="medicineForm" 
+      <form name="medicineForm" id="medicineForm" @if(empty($medicineData['id'])) action="{{url('admin/add-edit-medicine')}}" @else action="{{url('admin/add-edit-medicine/'.$medicineData['id'])}}" @endif method="post" enctype="multipart/form-data">
         @csrf
         <div class="card card-default">
         <div class="card-header">
@@ -48,27 +49,29 @@
               <div class="form-group">
                 <label for="medicineName">Medicine Name</label>
                 <input type="text" class="form-control" id="medicineName" name="medicineName" placeholder="Enter Medicine Name"
-               
+                @if (!empty($medicineData['medicineName'])) value="{{$medicineData['medicineName']}}" @else value="{{old('medicineName')}}" @endif>
               </div>
 
               <div class="form-group">
                 <label>Select Manufacturer</label>
                 <select class="form-control select2" style="width: 100%" name="manufacturerId" id="manufacturerId">
                   <option value="">Select</option>
-                  
+                  @foreach($getManufacturers as $manufacturer)
+                  <option value="{{$manufacturer->id}}" @if(!empty(@old('manufacturerId')) && $manufacturer[id]==@old('manufacturerId')) selected="" @elseif(!empty($medicineData['manufacturerId'])) && $medicineData['manufacturerId']==$manufacturer['id'] selected="" @endif>{{$manufacturer->manufacturerName}}</option>
+                  @endforeach
                 </select>
               </div>
               <!-- /.form-group -->
               <div class="form-group">
                 <label for="generic">Generic</label>
                 <input type="text" class="form-control" id="generic" name="generic" placeholder="Enter Generic"
-               
+                @if (!empty($medicineData['generic'])) value="{{$medicineData['generic']}}" @else value="{{old('generic')}}" @endif>
               </div>
 
               <div class="form-group">
                 <label for="price">Price</label>
                 <input type="number" class="form-control" id="medicinePrice" name="medicinePrice" placeholder="Enter Price"
-               
+                @if (!empty($medicineData['medicinePrice'])) value="{{$medicineData['medicinePrice']}}" @else value="{{old('medicinePrice')}}" @endif>
               </div>
 
               <div class="form-group">
@@ -82,25 +85,25 @@
               <div class="form-group">
                 <label for="type">Type</label>
                 <input type="text" class="form-control" id="type" name="type" placeholder="Tablet, Capsule etc."
-               
+                @if (!empty($medicineData['type'])) value="{{$medicineData['type']}}" @else value="{{old('type')}}" @endif>
               </div>
 
               <div class="form-group">
                 <label for="quantity">Quantity</label>
                 <input type="text" class="form-control" id="quantity" name="quantity" placeholder="pcs per pata"
-                
+                @if (!empty($medicineData['quantity'])) value="{{$medicineData['quantity']}}" @else value="{{old('quantity')}}" @endif>
               </div>
 
               <div class="form-group">
                 <label for="dose">Dose</label>
                 <input type="text" class="form-control" id="dose" name="dose" placeholder="mg/ml per pc"
-              
+                @if (!empty($medicineData['dose'])) value="{{$medicineData['dose']}}" @else value="{{old('dose')}}" @endif>
               </div>
 
               <div class="form-group">
                 <label for="stock">Stock Units</label>
                 <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock Units"
-                
+                @if (!empty($medicineData['stock'])) value="{{$medicineData['stock']}}" @else value="{{old('stock')}}" @endif>
               </div>
               </div>
             </div>
@@ -110,7 +113,7 @@
               <div class="input-group">
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="medicineImage" name="medicineImage"
-                
+                  @if (!empty($medicineData['medicineImage'])) value="{{$medicineData['medicineImage']}}" @else value="{{old('medicineImage')}}" @endif>
                   <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                 </div>
                 <div class="input-group-append">
