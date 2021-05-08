@@ -20,7 +20,7 @@ class ProductController extends Controller
         return view('frontend.medicine_detail')->with(compact('productDetails'));
     }
 
-
+//Changed COnfig/database.php strict -> true to false. its working now
 
     public function addtocart(Request $request){
         if($request->isMethod('post')){
@@ -55,14 +55,7 @@ class ProductController extends Controller
 
     }
 }
-   /**
-     * Search
-     *
-     * Returns the view of product details
-     * @bodyParam productDetails is requesting for data
-     * Returns the view of product details
 
-     */
 
 public function search(){
 $search_text =$_GET['query'];
