@@ -6,7 +6,7 @@ use App\Http\Controllers\Front\UsersController;
 use App\Http\Controllers\Admin\ManufacturerController;
 use App\Http\Controllers\Admin\MedicinesController;
 use App\Http\Controllers\Front\ProductController;
-
+use App\Http\Controllers\Front\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,5 +56,6 @@ Route::post('/cart',[ProductController::class,'addtocart']);
 
    
 Route::get('/search',[ProductController::class,'search']);
-   
+
+Route::post('/autocart',[OrderController::class,'autocart']);
  
