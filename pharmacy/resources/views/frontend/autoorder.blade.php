@@ -1,37 +1,35 @@
 @extends('layouts.app')
 @section('content')
 
-  
-    <div class="form-row">
-        <div class="form-group col-md-3">
-        <label for="exampleFormControlFile1">Upload Your Presciption Here!</label>
-        <br><br>
-        
 
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        <br>
-        <button type="submit" class="btn btn-primary mb-2">Upload</button>
-      </div>
-    </div>
+<form action="{{ url('autocart') }}" method="post" class="form-horizontal qtyFrm" enctype="multipart/form-data">
+  @csrf
+  <label for="exampleFormControlFile1">Upload Your Presciption Here!</label>
+    
+      <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+    <br>
+      <label for="days">Days</label>
+      <input type="number" class="form-control" id="days" name="days" placeholder="days">
+    
+  <br><br>
+  
+ 
+    <label for="stock">Money Amount</label>
+    <input type="number" class="form-control" id="money_amount" name="money_amount" placeholder="Money Amount">
+ 
+  <br><br>
+   <button type="submit" class="btn btn-large btn-primary pull-right"> Add to cart </button>
+     
     </form>
 
 
 
-  <label for="quantity">Money Amount (taka):</label>
-  <input type="number" id="money" name="quantity" min="1" max="300000" >
 
-  <br><br>
-  
-  <label for="quantity">Days:</label>
-  <input type="number" id="days" name="quantity" min="1" max="60" >
-  
-  <br><br>
- 
-  <button type="submit" class="btn btn-primary mb-2">Submit </button>
+
 </div>
     </div>
  
   
-
+  </form>
   @endsection
 
