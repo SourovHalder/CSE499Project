@@ -108,11 +108,6 @@ class ProductController extends Controller
 
 
 
-public function search(){
-$search_text =$_GET['query'];
-$productDetails = Medicine::where('medicineName', 'LIKE', '%'.$search_text.'%')->get();
-return view('frontend.search',compact('productDetails'));
-}
 
 
 }

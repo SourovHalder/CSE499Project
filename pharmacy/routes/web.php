@@ -54,8 +54,6 @@ Route::match(['GET', 'POST'],'/account',[UsersController::class,'account']);
 
 Route::post('/cart',[ProductController::class,'addtocart']);
 
-   
-Route::get('/search',[ProductController::class,'search']);
 
 Route::post('/autocart',[OrderController::class,'autocart']);
  
