@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Medicine;
 use App\Models\Cart;
 use App\Models\AutoCart;
+use Illuminate\Support\Facades\Auth;
 use Session;
+
 use Intervention\Image\ImageManagerStatic as Image;
 /**
  * @group Product Controller
@@ -32,7 +34,17 @@ class ProductController extends Controller
            $session_id = Session::get('session_id');
            if(empty($session_id)){
                $session_id = Session::getId();
-               Session::put('session_id', $session_id);
+               session::put('session_id', $session_id);
+           }
+           if(Auth::check()){
+               $countProducts =Cart::where(['medicinId'=>$data['medicineId'],'user_id' =>Auth::user()->id])->count();
+           } else{
+            $countProducts =Cart::where(['medicinId'=>$data['medicineId'],'user_id' =>Auth::user()->id])->count();
+           }
+           if($countProducts>0){
+               $message="Product already exists in the Cart";
+               $request->session()->flash('error_message', $message);
+               return redirect()->back();
            }
 
 
@@ -56,6 +68,17 @@ class ProductController extends Controller
 
 
     }
+}
+
+public function cart(){
+    return view('frontend.cart');
+
+}
+
+
+
+
+
 }
 
 
@@ -105,9 +128,3 @@ class ProductController extends Controller
 // }
 // }
 // }
-
-
-
-
-
-}
