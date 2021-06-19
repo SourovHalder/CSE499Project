@@ -58,3 +58,5 @@ Route::post('/cart',[ProductController::class,'addtocart']);
 Route::post('/autocart',[OrderController::class,'autocart']);
  
 Route::get('/showcart',[ProductController::class,'cart']);
+
+Route::get('/search',[ProductController::class,'search']);
