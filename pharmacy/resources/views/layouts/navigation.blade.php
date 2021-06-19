@@ -32,14 +32,18 @@
   <li><a href="{{url('/account')}}"><span class="glyphicon glyphicon-user"></span> Hello {{ Auth::user()->firstName }}</a></li>
   @endauth
   <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a>
+    @guest
+    <li class="dropdown"><a href="{{ url('/registration-page') }}"><span class="glyphicon glyphicon-plus-sign"></span> Register</a>
+      <li class="dropdown"><a href="{{ url('/login-page') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+    @endguest
+
     <div class="dropdown-content" aria-label="submenu">
       @auth
-      <a href="{{ url('/logout') }}"> {{ __('Logout') }}</a>
+     
+      <li class="dropdown"><a href="{{ url('/logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+      
       @endauth
-      @guest
-      <a href="{{ url('/registration-page') }}">Register</a>
-      <a href="{{ url('/login-page') }}">Login</a>
-      @endguest
+
           </div>
         </li>
         <li><a href="#" onclick="return false";><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
