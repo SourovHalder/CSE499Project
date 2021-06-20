@@ -43,10 +43,10 @@
       <li class="dropdown"><a href="{{ url('/logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
       
       @endauth
-
+      <li><a href="#" onclick="return false";><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
           </div>
         </li>
-        <li><a href="#" onclick="return false";><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      
       </ul>
     </div>
   </div>
