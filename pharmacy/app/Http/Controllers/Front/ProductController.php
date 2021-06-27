@@ -37,9 +37,9 @@ class ProductController extends Controller
                session::put('session_id', $session_id);
            }
            if(Auth::check()){
-               $countProducts =Cart::where(['medicinId'=>$data['medicineId'],'user_id' =>Auth::user()->id])->count();
+               $countProducts =Cart::where(['medicineId'=>$data['medicineId'],'user_id' =>Auth::user()->id])->count();
            } else{
-            $countProducts =Cart::where(['medicinId'=>$data['medicineId'],'user_id' =>Auth::user()->id])->count();
+            $countProducts =Cart::where(['medicineId'=>$data['medicineId'],'user_id' =>Auth::user()->id])->count();
            }
            if($countProducts>0){
                $message="Product already exists in the Cart";
@@ -71,7 +71,9 @@ class ProductController extends Controller
 }
 
 public function cart(){
-    return view('frontend.cart');
+    $userCartItems = Cart::userCartItems();
+    echo "<pre>"; print_r($userCartItems);die;
+    return view('frontend.cart')->with(compact('userCartItems'));
 
 }
 
