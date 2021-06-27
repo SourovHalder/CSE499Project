@@ -41,11 +41,15 @@
                     </tr>
                   </thead>
                   <tbody>
+                  @foreach($userCartItems as $item)
+                  <tr>
+                  </tr>
+                  @endforeach
                     <tr class="">
                       <td class="">
                         <div class="product-info">
                           <img width="80" src="images/shop/cart/cart-1.jpg" alt="" />
-                          <a href="#!">Sunglass</a>
+                          <td>{{ $item['medicineId']}}</td>
                         </div>
                       </td>
                       <td class="">$200.00</td>

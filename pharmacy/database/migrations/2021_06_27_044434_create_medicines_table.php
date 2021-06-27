@@ -17,6 +17,7 @@ class CreateMedicinesTable extends Migration
             $table->id();
             $table->integer('manufacturerId');
             $table->string('medicineName');
+            $table->integer('medicineId');
             $table->string('generic');
             $table->string('type');
             $table->string('quantity');
