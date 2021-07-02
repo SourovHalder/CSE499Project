@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Session;
+use App\Medicine;
 
 
 
@@ -26,14 +27,14 @@ class Cart extends Model
     ];
     public static function userCartItems(){
         if(Auth::check()){
-            $userCartItems = Cart::with('Medicine')->where('medicineId', Auth::user()->id)->get()->toArray();
+            $userCartItems = Cart::with('medicine')->where('medicineId', Auth::user()->id)->get()->toArray();
         }else{
-            $userCartItems = Cart::with('Medicine')->where('session_id', Session::get('session_id'))->get()->toArray();
+            $userCartItems = Cart::with('medicine')->where('session_id', Session::get('session_id'))->get()->toArray();
 
         }
         return $userCartItems; 
     }
-    public function product(){
-        return $this->belongsTo('App\Medicine','medicineId');
+    public function medicine(){
+        return $this->belongsTo('App\Models\Medicine','medicineId');
     }
 }
