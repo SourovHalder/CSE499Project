@@ -55,6 +55,7 @@ class MedicinesController extends Controller
 
         $medicine->manufacturerId=$data['manufacturerId'];
         $medicine->medicineName=$data['medicineName'];
+        $medicine->medicineId=$data['medicineId'];
         $medicine->generic=$data['generic'];
         $medicine->type=$data['type'];
         $medicine->quantity=$data['quantity'];
