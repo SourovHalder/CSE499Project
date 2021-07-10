@@ -23,7 +23,7 @@ class ProductController extends Controller
         $productDetails= Medicine::find($id)->toArray();
         return view('frontend.medicine_detail')->with(compact('productDetails'));
     }
-
+ 
 //Changed COnfig/database.php strict -> true to false. its working now
 
     public function addtocart(Request $request){
@@ -75,7 +75,7 @@ public function cart(){
     // $userCartItems2 = Medicine::userCartItems2();
     
    
-    echo "<pre>"; print_r($userCartItems);die;
+    // echo "<pre>"; print_r($userCartItems);die;
     return view('frontend.cart')->with(compact('userCartItems'));
 
 }

@@ -1,11 +1,11 @@
+{{-- <?php use App\Models\Cart;?> --}}
+
 @extends('layouts.app')
 @section('content')
 
 
 <!DOCTYPE html>
 <html lang="en">
-
-
 <section class="page-header">
 	<div class="container">
 		<div class="row">
@@ -35,53 +35,34 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th class="">Item Name</th>
-                      <th class="">Item Price</th>
+                      <th class="">Medicine</th>
+                      <th class="">Medicine Name</th>
+                      <th class="">quantity</th> 
+                      <th class="">Price</th>
                       <th class="">Actions</th>
+                      <th class="">Total Price</th>
                     </tr>
                   </thead>
                   <tbody>
+                    <?php $total_price=0;?>
                   @foreach($userCartItems as $item)
+                  {{-- <?php $attrPrice = Cart::getMedicineAttrPrice($item['medicineId'],$item['quantity']); ?> --}}
                   <tr>
+                    <td>
+                    <img width="60" src="{{asset ('images/medicine_images/'.$item['medicine']['medicineImage']) }}" alt=""/> </td>
+                    <td>{{ $item['medicine']['medicineName']}}</td>
+                    <td>{{ $item['medicine']['quantity']}}</td>
+                    <td>{{ $item['medicine']['medicinePrice']}}</td>
+                 
                   </tr>
+                  <?php
+               
+                  $total_price = $total_price + ($item['medicine']['medicinePrice'] * $item['medicine']['quantity']); ?>
                   @endforeach
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-1.jpg" alt="" />
-                          <td>{{ $item['medicineId']}}</td>
-                        </div>
-                      </td>
-                      <td class="">$200.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-2.jpg" alt="" />
-                          <a href="#!">Airspace</a>
-                        </div>
-                      </td>
-                      <td class="">$200.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-3.jpg" alt="" />
-                          <a href="#!">Bingo</a>
-                        </div>
-                      </td>
-                      <td class="">$200.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
-                  </tbody>
+                  
+                 <tr>
+                  <td colspan=" 6 "style="text-align:right">Total Price </td>
+                     <td>BDT.{{ $total_price }}</td>
                 </table>
                 <button type="button" class="btn btn-primary btn-lg pull-right"">Checkout</button>
                 
