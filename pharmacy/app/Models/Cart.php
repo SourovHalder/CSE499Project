@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Session;
-use App\Medicine;
+use App\Models\Medicine;
 
 
 
@@ -37,4 +37,8 @@ class Cart extends Model
     public function medicine(){
         return $this->belongsTo('App\Models\Medicine','medicineId');
     }
+    // public static function getMedicineAttrPrice($medicineId,$quantity ){
+    // $attrPrice = Medicine::select('medicinePrice')->where(['medicineId'=>$medicineId,'quantity'=>$quantity])->first()->toArray();
+    // return $attrPrice['medicinePrice'];
+    // }
 }
