@@ -67,5 +67,10 @@ Route::post('/autocart',[OrderController::class,'autocart']);
 Route::get('/showcart',[ProductController::class,'cart']);
 
 Route::get('/search',[ProductController::class,'search']);
+
 Route::get('/detail',[ProductController::class,'detail']);
 Route::get('/search',[ProductController::class,'search']);
+
+
+Route::get('/map',[MapsController::class,'getLocation']);
+
