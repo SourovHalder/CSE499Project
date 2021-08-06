@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Front\UsersController;
 use App\Http\Controllers\Admin\ManufacturerController;
 use App\Http\Controllers\Admin\MedicinesController;
+use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Front\OrderController;
 
@@ -22,6 +23,12 @@ use App\Http\Controllers\Front\OrderController;
 Route::get('/', function (){
     return view('welcome');
 });
+Route::namespace('Front')->group(function(){
+Route::get('/', [IndexController::class,'welcome']);
+Route::get('/medicine/{id}',[ProductController::class,'detail']);
+
+});
+
 
 Route::get('admin',[AdminController::class,'index']);
 Route::post('admin/auth',[AdminController::class,'auth']);
@@ -61,4 +68,9 @@ Route::get('/showcart',[ProductController::class,'cart']);
 
 Route::get('/search',[ProductController::class,'search']);
 
+Route::get('/detail',[ProductController::class,'detail']);
+Route::get('/search',[ProductController::class,'search']);
+
+
 Route::get('/map',[MapsController::class,'getLocation']);
+

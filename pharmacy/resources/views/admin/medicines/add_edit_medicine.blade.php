@@ -51,6 +51,10 @@
                 <input type="text" class="form-control" id="medicineName" name="medicineName" placeholder="Enter Medicine Name"
                 @if (!empty($medicineData['medicineName'])) value="{{$medicineData['medicineName']}}" @else value="{{old('medicineName')}}" @endif>
               </div>
+              <label for="medicineId">Medicine Id</label>
+              <input type="text" class="form-control" id="medicineName" name="medicineId" placeholder="Enter Medicine ID"
+              @if (!empty($medicineData['medicineId'])) value="{{$medicineData['medicineId']}}" @else value="{{old('medicineId')}}" @endif>
+            </div>
 
               <div class="form-group">
                 <label>Select Manufacturer</label>
