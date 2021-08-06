@@ -1,5 +1,5 @@
 /*Main CSS*/
-
+<style>
 
 /*Login Signup Page*/
 a:focus,a:hover,a{
@@ -700,3 +700,4 @@ header {
     width: 100%;
 }
 }
+</style>
