@@ -8,7 +8,7 @@
 			<div class="carousel-inner">
 				<div class="item active">
 					<div class="container">
-						<a href="#"><img style="width:100%" src="/images/med.jpg" alt="special offers"/></a>
+						<a href="#"><img style="width:100%" src="/images/med6.jpg" alt="special offers"/></a>
 						<div class="carousel-caption">
 	                        <h3>Get Vitamins at 25% discount</h3>
 	                        <p></p>
@@ -17,7 +17,7 @@
 				</div>
 				<div class="item">
 					<div class="container">
-						<a href="#"><img style="width:100%" src="/images/med2.jpg" alt=""/></a>
+						<a href="#"><img style="width:100%" src="/images/med7.jpg" alt=""/></a>
 						<div class="carousel-caption">
 	                        <h3>get your daily need medicines at 10% discount</h3>
 	                        <p>Save Money</p>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="item">
 				<div class="container">
-					<a href="#"><img src="/images/doctor.jpg" alt=""/></a>
+					<a href="#"><img style="width:100%" src="/images/doc5.jpg" alt=""/></a>
 					<div class="carousel-caption">
                         <h3>Need Doctors? </h3>
                         <p>Coming soon..</p>
@@ -71,7 +71,8 @@
 					{{$medicine['generic']}}
 				</p>
 
-				<h4 style="text-align:center"><a class="btn" href="/medicine/{{$medicine['id']}}">View</a> <a class="btn" href="#">Add to Cart</i></a> <a class="btn btn-primary" href="#">{{$medicine['medicinePrice']}} Tk</a></h4>
+				<h4 style="text-align:center"><a class="btn btn-primary" href="/medicine/{{$medicine['id']}}">View</a> <a class="btn btn-primary" href="#">Add to Cart</i></a> <a class="btn btn-info" href="#">{{$medicine['medicinePrice']}} Tk</a></h4>
+				
 			</div>
 		</div>
 	</li>
@@ -109,7 +110,7 @@
 					{{$m['generic']}}
 				</p>
 
-				<h4 style="text-align:center"><a class="btn" href="/medicine/{{$m['id']}}">View</a> <a class="btn" href="#">Add to Cart</i></a> <a class="btn btn-primary" href="#">{{$m['medicinePrice']}} Tk</a></h4>
+				<h4 style="text-align:center"><a class="btn btn-primary" href="/medicine/{{$m['id']}}">View</a> <a class="btn btn-primary" href="#">Add to Cart</i></a> <a class="btn btn-info" href="#">{{$m['medicinePrice']}} Tk</a></h4>
 			</div>
 		</div>
 	</li>

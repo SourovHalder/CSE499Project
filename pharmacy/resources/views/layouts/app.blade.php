@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
   <link id="callCss" rel="stylesheet" href="{{asset('/css/front.min.css')}}" media="screen"/>
   <link href="{{asset('/css/base.css')}}" rel="stylesheet" media="screen"/>
   <link href="{{asset('/js/google-code-prettify/prettify.css')}}" rel="stylesheet"/>
