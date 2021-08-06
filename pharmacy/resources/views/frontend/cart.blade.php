@@ -47,6 +47,7 @@
                     <?php $total_price=0;?>
                   @foreach($userCartItems as $item)
                   {{-- <?php $attrPrice = Cart::getMedicineAttrPrice($item['medicineId'],$item['quantity']); ?> --}}
+                  
                   <tr>
                     <td>
                     <img width="60" src="{{asset ('images/medicine_images/'.$item['medicine']['medicineImage']) }}" alt=""/> </td>

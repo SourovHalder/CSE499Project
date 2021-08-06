@@ -7,10 +7,15 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Online Pharmacy</a>
+      
+      
     </div>
+    
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
+        
+        <li class="/"><a href="/">Home</a></li>
+        <li><a href="{{url('/map')}}">Medicines</a></li>
         <li><a href="{{url('/map')}}">Nearby Pharmacy</a></li>
         <li><a href="{{url('/autoorder')}}">Let us order for you</a></li>
       </ul>
@@ -43,7 +48,7 @@
       <li class="dropdown"><a href="{{ url('/logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
       
       @endauth
-      <li><a href="#" onclick="return false";><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      <li><a href="{{url('/showcart')}}"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
           </div>
         </li>
       
