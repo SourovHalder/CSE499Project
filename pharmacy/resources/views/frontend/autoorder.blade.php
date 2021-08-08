@@ -10,6 +10,7 @@
     <br>
       <label for="days">Days</label>
       <input type="number" class="form-control" id="days" name="days" placeholder="days">
+      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" >
     
   <br><br>
   

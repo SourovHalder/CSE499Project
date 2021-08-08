@@ -75,7 +75,7 @@ public function cart(){
     // $userCartItems2 = Medicine::userCartItems2();
     
    
-    // echo "<pre>"; print_r($userCartItems);die;
+    echo "<pre>"; print_r($userCartItems);die;
     return view('frontend.cart')->with(compact('userCartItems'));
 
 }

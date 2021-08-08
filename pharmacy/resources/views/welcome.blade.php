@@ -122,4 +122,16 @@
 </div>
 
 </div>
+<div>
+
+<div class="jumbotron">
+	<h2>We can ORDER for you!</h2>
+	<p>		1.Click on 'let us order for you'</p>
+	<p>		2.Upload Prescription</p>
+	<p>		3.mention for how many days you want your medicine your days segment</p>
+	<p>		4.Enter amount</p>
+	<p>		5.Click "submit" </p>
+	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  </div>
+
 @endsection
