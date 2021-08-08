@@ -27,9 +27,16 @@ class Cart extends Model
     ];
     public static function userCartItems(){
         if(Auth::check()){
-            $userCartItems = Cart::with('medicine')->where('medicineId', Auth::user()->id)->get()->toArray();
+    
+        $userCartItems = Cart::with(['medicine'=>function($query){
+            $query->select('medicineName','medicineId','medicinePrice');
+
+        }])->where('medicineId', Auth::user()->id)->get()->toArray();
         }else{
-            $userCartItems = Cart::with('medicine')->where('session_id', Session::get('session_id'))->get()->toArray();
+            $userCartItems = Cart::with(['medicine'=>function($query){
+                $query->select('medicineName','medicineId','medicinePrice');
+    
+            }])->where('session_id', Session::get('session_id'))->get()->toArray();
 
         }
         return $userCartItems; 
