@@ -73,6 +73,7 @@ Route::get('/search',[ProductController::class,'search']);
 
 
 Route::get('/map',[MapsController::class,'getLocation']);
+Route::get('/productdisplay',[ProductController::class,'productdisplay']);
 
 Route::get('/productdisplay',[ProductController::class,'productdisplay']);
 
