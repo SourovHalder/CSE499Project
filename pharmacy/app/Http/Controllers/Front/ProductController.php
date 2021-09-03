@@ -87,10 +87,18 @@ public function search(){
     }
 
 
+    public function productdisplay(){
+        $newMedicines= Medicine::orderBy('id','Desc')->limit(4)->get()->toArray();
+        $newMedicines = json_decode(json_encode($newMedicines),true);
+        $newMedicines2= Medicine::orderBy('id')->limit(4)->get()->toArray();
+        $newMedicines2 = json_decode(json_encode($newMedicines2),true);
+        $newMedicines3=Medicine::whereIn('id', [10,11,9,12])->get()->toArray();
+        // echo "<pre>"; print_r($newMedicines);die;
+        $page_name="productdisplay";
+        return view('frontend.productdisplay')->with(compact('page_name','newMedicines','newMedicines2','newMedicines3'));
+    }
 
 }
-
-
 // //AUTOORDER PROCESSING
 // public function autodetail($id){
 //     $productDetails2= AutoCart::find($id)->toArray();

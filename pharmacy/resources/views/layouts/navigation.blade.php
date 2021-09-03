@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav">
         
         <li class="/"><a href="/">Home</a></li>
-        <li><a href="{{url('/map')}}">Medicines</a></li>
+        <li><a href="{{url('/productdisplay')}}">Medicines</a></li>
         <li><a href="{{url('/map')}}">Nearby Pharmacy</a></li>
         <li><a href="{{url('/autoorder')}}">Let us order for you</a></li>
       </ul>

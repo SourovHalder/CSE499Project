@@ -19,7 +19,7 @@
     <input type="number" class="form-control" id="money_amount" name="money_amount" placeholder="Money Amount">
  
   <br><br>
-   <button type="submit" class="btn btn-large btn-primary pull-right"> Add to cart </button>
+   <button type="submit" class="btn btn-large btn-primary pull-left"> Add to cart </button>
      
     </form>
 
